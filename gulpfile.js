@@ -51,14 +51,8 @@ const clean = async () => {
 const compressImages = async () => {
     return src(
         [
-            './src/images/examples/**/*',
-            './src/images/plugs/**/*',
-            './src/images/plugs/**/*',
-            './src/images/bgs/**/*',
+            './src/images/benefits/**/*',
             './src/images/*.{jpg,jpeg,png,webp}',
-            // './src/images/*.jpg',
-            // './src/images/*.jpeg',
-            // './src/images/*.png'
         ],
         { base: './src/images' }
     )
@@ -72,7 +66,6 @@ const copyAll = async () => {
             './src/scripts/**/*',
             './src/images/svg/**/*',
             './src/images/*.svg',
-            // './src/css/**/*',
             './src/js/**/*',
             './src/fonts/**/*',
             './src/svg/**/*',
