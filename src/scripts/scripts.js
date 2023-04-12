@@ -84,3 +84,62 @@ buildPreviews(benefitsSwiper);
     document.querySelector('.screen-benefits').scrollIntoView({behavior: "smooth"})
   })
 }());
+
+function vhFix() {
+  let ornt = window.innerWidth > window.innerHeight ? 'land' : 'port'
+  let prev = window.innerHeight;
+  let vh = prev * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  window.addEventListener('load', () => {
+    setTimeout(()=>{
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    },1)
+  });
+
+  window.addEventListener('resize', () => {
+    let current = window.innerWidth > window.innerHeight ? 'land' : 'port'
+    if (ornt !== current) {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      ornt = current
+    }
+  });
+}
+vhFix();
+
+
+(function () {
+  if (!document.querySelector('.agree-back')) return
+
+  document.querySelector('.agree-back').addEventListener('click', (e) => {
+    e.preventDefault()
+
+    window.history.go(-1)
+  })
+}());
+
+
+(function () {
+  if (!document.querySelector('.agree-confirm')) return
+
+  document.querySelector('.agree-confirm').addEventListener('click', (e) => {
+    e.preventDefault()
+
+    document.querySelector('.agree').classList.add('enter')
+    setTimeout(()=> {
+      document.querySelector('.agree').remove()
+    },500)
+    localStorage.setItem('age_confirm','Y')
+  })
+}());
+
+if (localStorage.getItem('age_confirm') && localStorage.getItem('age_confirm') === 'Y') {
+  document.querySelector('.agree').classList.add('enter')
+  setTimeout(()=> {
+    document.querySelector('.agree').remove()
+  },750)
+} else {
+  document.querySelector('.agree').classList.add('visible')
+}
