@@ -1,0 +1,145 @@
+// Colors & BG's ---
+$bgc: #C02033;
+$bg: #f8f8f8;
+$bg_dark: #1D2735;
+$font: #FFF;
+$font_2: #2D2835;
+$font_3: #a3a3a3;
+$light: #EFEFEF;
+$titles: $font;
+$gray: rgba(#000, .3);
+$gray_hover: rgba(#000, .5);
+
+$primary: #F08322;
+$primary_hover: lighten($primary, 10%);
+$primary_active: lighten($primary, 16%);
+$secondary: #268E80;
+$secondary_hover: darken($secondary, 8%);
+$secondary_active: darken($secondary, 14%);
+$tertiary: #97B446;
+$blue: #4590BA;
+$brown: #CA7F49;
+$darkbrown: #B16531;
+$lightorange: #F68833;
+$darkyellow: #A99A0F;
+
+
+
+$red: $tertiary;
+$red_hover: darken($red, 10%);
+$yellow: #ffcf28;
+$yellow_hover:  darken($yellow, 15%);
+$magenta: #BB6BD9;
+$green: #27AE60;
+
+$dark: #171717;
+
+$link: $primary;
+$link_hover: $primary_hover;
+$link_active: $primary_active;
+$link_border: $primary_hover;
+$link_border_hover: transparent;
+
+$border: #dbdbdb;
+$border_light: #F1F1F1;
+$devider: #d6d6d6;
+
+$valid: #25a670;
+
+$input_border: #D4D4D4;
+$input_hover: darken($input_border, 15%);
+$input_focus: $primary;
+$input_shadow: #f6f6f6;
+$jq_border: #a3a3a3;
+$jq_hover: darken($jq_border,15%);
+$jq_focus: $primary;
+
+
+// Layouts
+$inner: 1520px;
+$gutter: 50px;
+$col_gutter: 15px;
+$block_margin: 0 0 25px;
+
+
+// Grid
+$breakpoints: ("xl":1440,"lg":1260,"md":1024,"sm":768,"xs":599,"us":400);
+
+$content_cols: 24;
+$content_col: 4.16%;
+
+
+// Typography ---
+$fontsize: 18;
+$weight: 400;
+$basefont: 'Montserrat';
+$accia: 'Accia Flare';
+$sans: 'Source Sans Pro';
+$lh: 1.42;
+$th: 1.42;
+$paragraph_margin: 0px 0px 18px;
+
+// headings
+$headings_font_family: $basefont;
+$headings_margin: 40px 0px 40px;
+$headings_font_weight: 400;
+$headings_color: $titles;
+$headings_text_transform: none;
+$h_extra: 200;
+$h1: 120;
+$h1_compact: 90;
+$h2: 52;
+$h3: 42;
+$h4: 42;
+$h5: 32;
+$h6: $fontsize;
+
+$block_heading_font_size: 24;
+$block_heading_font_weight: 700;
+
+// article typography
+$article_font_size: 16;
+$article_line_height: (22/$article_font_size);
+$article_paragraph_margin: $paragraph_margin;
+$article_img_margin: $paragraph_margin;
+$article_font_weight: $weight;
+
+
+// Buttons & Inputs ---
+$btn_font_size: 24;
+$btn_font_size_mini: 20;
+$btn_font_weight: 400;
+$btn_text_transform: none;
+$btn_height: 76px;
+$btn_height_big: 70px;
+$btn_height_mini: 72px;
+$btn_paddings: 0px 30px;
+$btn_border_width: 1px;
+$btn_border_color: #FFF;
+$btn_border_radius: 8px;
+$btn_bg: transparent;
+$btn_color: #FFF;
+
+$input_height: $btn_height;
+$input_paddings: 0px 25px;
+$input_border_radius: $btn_border_radius;
+$input_bg: transparent;
+
+$checkbox_size: 18px;
+$checkbox_border_radius: 2px;
+$radio_size: $checkbox_size;
+
+
+$beizer: cubic-bezier(.3,.53,.38,.73);
+
+$trn_d: .4s; //transition-delay
+
+
+@mixin fz($f_size) {
+	font-size: $f_size + px;
+	font-size: $f_size/16 + rem;
+}
+
+@mixin ls($lsp) {
+	letter-spacing: $lsp/1000 + em;
+}
