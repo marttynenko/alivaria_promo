@@ -2361,6 +2361,8 @@ table {
 .benefits-slider-nav-inner {
   max-width: 500px;
   margin: 0 auto;
+  font-size: 0;
+  white-space: nowrap;
 }
 .benefits-slider-arrow {
   width: 30px;
@@ -2395,6 +2397,7 @@ table {
   white-space: nowrap;
   overflow-y: hidden;
   overflow-x: auto;
+  max-width: calc(100% - 100px);
 }
 .benefits-slider-previews::-webkit-scrollbar {
   width: 0;
@@ -2693,6 +2696,179 @@ table {
   }
   .agree-question {
     margin-bottom: 25px;
+  }
+}
+
+.benefits-slide-descr.max-height-auto {
+  max-height: none;
+}
+
+@media (max-height: 700px) {
+  .benefits-slide-descr img {
+    max-height: 100px;
+    width: auto;
+  }
+}
+.screen-benefits-cols {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.screen-benefits-logo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 17.7%;
+          flex: 0 0 17.7%;
+  max-width: 17.7%;
+  padding: min(8vh, 80px) min(60px, 3.5vw);
+  text-align: center;
+  background: url(../images/top-screen-bg.jpeg) center no-repeat;
+  background-size: cover;
+  color: #2D2835;
+}
+.screen-benefits-logo-img {
+  margin-bottom: 60px;
+}
+.screen-benefits-logo-img img {
+  display: block;
+  margin: 0 auto;
+  width: 350px;
+}
+.screen-benefits-logo-slogan {
+  font-size: 36px;
+  font-size: 2.25rem;
+  font-weight: 500;
+  font-family: "Accia Flare";
+  max-width: 220px;
+  margin: 0 auto;
+  line-height: 1.1;
+}
+.screen-benefits-slider {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 83.3%;
+          flex: 0 0 83.3%;
+  max-width: 83.3%;
+  position: relative;
+}
+@media (min-width: 992px) {
+  .screen-benefits-cols .benefits-slide-content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .screen-benefits-cols .benefits-slider-nav {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 1600px) {
+  .screen-benefits-logo {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+    max-width: 20%;
+  }
+  .screen-benefits-slider {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 80%;
+            flex: 0 0 80%;
+    max-width: 80%;
+  }
+}
+@media (max-width: 1366px) and (min-width: 992px) {
+  .screen-benefits-cols .benefits-slide-img, .screen-benefits-cols .benefits-slide-content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .screen-benefits-cols .benefits-slider-nav {
+    width: 50%;
+    left: 50%;
+  }
+}
+@media (max-width: 1600px) and (min-width: 1366px) {
+  .screen-benefits-cols .benefits-slide-where {
+    max-width: 18%;
+  }
+}
+@media (max-width: 1366px) {
+  .screen-benefits-logo {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .screen-benefits-logo-img {
+    margin-bottom: 40px;
+  }
+  .screen-benefits-logo-slogan {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+}
+@media (max-width: 1180px) and (min-width: 992px) {
+  .screen-benefits-cols .benefits-slide-content {
+    padding-right: 40px;
+  }
+}
+@media (max-width: 992px) {
+  .screen-benefits-cols {
+    display: block;
+  }
+  .screen-benefits-logo {
+    max-width: 100%;
+  }
+  .screen-benefits-logo-img {
+    margin-bottom: 30px;
+  }
+  .screen-benefits-logo-img img {
+    width: 300px;
+  }
+  .screen-benefits-logo-slogan {
+    font-size: 46px;
+    max-width: 280px;
+  }
+  .screen-benefits-slider {
+    max-width: 100%;
+  }
+}
+@media (max-width: 599px) {
+  .screen-benefits-logo {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .screen-benefits-logo-img img {
+    width: 250px;
+  }
+}
+@media (max-width: 480px) {
+  .screen-benefits-logo-slogan {
+    font-size: 36px;
+    max-width: 220px;
+  }
+}
+
+.footer-inner {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-left: 60px;
+  padding-right: 160px;
+}
+@media (max-width: 1600px) {
+  .footer-inner {
+    padding-right: 60px;
+  }
+}
+@media (max-width: 992px) {
+  .footer-inner {
+    padding: 0px 40px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-inner {
+    padding: 0px 30px;
+  }
+}
+@media (max-width: 599px) {
+  .footer-inner {
+    padding: 0px 20px;
   }
 }
 /*# sourceMappingURL=sourcemaps/style.css.map */
