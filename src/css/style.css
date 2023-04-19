@@ -2409,6 +2409,7 @@ table {
   vertical-align: middle;
   width: 60px;
   height: 60px;
+  background-color: rgba(255, 255, 255, 0.85);
   position: relative;
   border-radius: 30px;
   overflow: hidden;
@@ -2709,6 +2710,21 @@ table {
     width: auto;
   }
 }
+.benefits-slide-img-signature {
+  background: #B9B1BB url(../images/top-screen-bg.jpeg) left bottom no-repeat;
+  background-size: cover;
+}
+
+.benefits-slide-bg-signature {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  width: 90%;
+}
+
 .screen-benefits-cols {
   display: -webkit-box;
   display: -ms-flexbox;

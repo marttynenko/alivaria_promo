@@ -511,6 +511,7 @@
     vertical-align: middle;
     width: 60px;
     height: 60px;
+    background-color: rgba(#FFF,.85);
     position: relative;
     border-radius: 30px;
     overflow: hidden;
@@ -813,6 +814,17 @@
 @media (max-height: 700px){.benefits-slide-descr img{max-height: 100px;width: auto;}}
 
 
+.benefits-slide-img-signature {
+  background: #B9B1BB url(../images/top-screen-bg.jpeg) left bottom no-repeat;
+  background-size: cover;
+}
+.benefits-slide-bg-signature {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 90%;
+}
 .screen-benefits {
   &-cols {
     display: flex;
