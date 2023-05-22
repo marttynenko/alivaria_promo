@@ -266,6 +266,7 @@
     background: url(../images/arrow-prev.svg) center no-repeat;
     background-size: contain;
     left: 0;
+    top: 29%;
 
     &::after {
       content: none;
@@ -276,6 +277,8 @@
     background: url(../images/arrow-next.svg) center no-repeat;
     background-size: contain;
     right: 0;
+    top: 29%;
+
 
     &::after {
       content: none;
@@ -373,7 +376,7 @@
     border-radius: 6px;
     box-shadow: 0 0 0 3px rgba(251, 247, 238, 0.3);
     position: absolute;
-    top: -20px;
+    top: -15px;
     margin-left: calc((280px - 95px) / 2);
 
     span {
@@ -420,6 +423,7 @@
     width: 100%;
     border: none;
     outline: none;
+    padding: 0 10px;
     transition: .2s ease-in;
 
     svg {
