@@ -38,7 +38,7 @@ function buildPreviews(swiper) {
   const previews = document.querySelector('.benefits-slider-previews')
   if (!imgs.length || !previews) return
 
-  
+
   document.querySelectorAll('.benefits-slide-img img').forEach((el,index) => {
     const clone = el.cloneNode()
     clone.removeAttribute('class')
@@ -57,7 +57,7 @@ function buildPreviews(swiper) {
     })
   })
 
-  
+
   swiper.on('slideChange', function(inst) {
     const current = inst.activeIndex
     document.querySelectorAll('.benefits-slider-preview').forEach(item => item.classList.remove('active'))
@@ -142,4 +142,31 @@ if (localStorage.getItem('age_confirm') && localStorage.getItem('age_confirm') =
   },750)
 } else {
   document.querySelector('.agree').classList.add('visible')
+}
+
+const slideCards = document.querySelectorAll('.voting-slide-card');
+
+if(slideCards.length) {
+  let index;
+
+  slideCards.forEach((card, i) => {
+    if (card.classList.contains('new')) {
+      index = i;
+    }
+  });
+
+  const votingSwiper = new Swiper('.voting-slider', {
+    slidesPerView: 4,
+    spaceBetween: 40,
+    initialSlide: index - 2,
+
+    navigation: {
+      nextEl: '.swiper-button-next.voting-slider-next',
+      prevEl: '.swiper-button-prev.voting-slider-prev',
+    },
+
+    pagination: {
+      el: '.swiper-pagination.voting-slider-pagination',
+    },
+  });
 }
