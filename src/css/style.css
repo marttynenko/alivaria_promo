@@ -2216,17 +2216,11 @@ table {
   position: relative;
   height: 100%;
 }
-.screen-voting .screen-alert {
-  top: 140px;
-}
 @media (max-width: 1680px) {
   .screen-voting {
     padding-top: 140px;
     padding-bottom: 140px;
     padding-right: 170px;
-  }
-  .screen-voting .screen-alert {
-    top: 120px;
   }
 }
 @media (max-width: 1440px) {
@@ -2239,17 +2233,11 @@ table {
     padding-top: 120px;
     padding-bottom: 120px;
   }
-  .screen-voting .screen-alert {
-    top: 100px;
-  }
 }
 @media (max-width: 1024px) {
   .screen-voting {
     padding-top: 100px;
     padding-bottom: 100px;
-  }
-  .screen-voting .screen-alert {
-    top: 80px;
   }
 }
 @media (max-width: 992px) {
@@ -2694,6 +2682,11 @@ table {
 .info-top-subtitle {
   font-size: 96px;
   line-height: 1.05;
+}
+@media (min-width: 599px) {
+  .info-top-subtitle {
+    margin-right: -3vw;
+  }
 }
 @media (max-width: 1880px) {
   .info-top-subtitle {

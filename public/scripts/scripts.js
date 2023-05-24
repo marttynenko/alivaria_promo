@@ -83,25 +83,28 @@ buildPreviews(benefitsSwiper);
 
     document.querySelector('.screen-benefits').scrollIntoView({behavior: "smooth"})
   })
+}());
 
-  // if (!document.querySelector('.screen-promo-appeal.voting') || !document.querySelector('.screen-voting')) return
-
-  // document.querySelector('.screen-promo-appeal.voting').addEventListener('click', (e) => {
-  //   e.preventDefault()
-
-  //   document.querySelector('.screen-voting').scrollIntoView({behavior: "smooth"})
-  // })
-
+(function () {
   if (!document.querySelector('.screen-promo-appeal.promo') || !document.querySelector('.screen-promo')) return
 
 
   document.querySelector('.screen-promo-appeal.promo').addEventListener('click', (e) => {
-    console.log('asdasd')
     e.preventDefault()
 
     document.querySelector('.screen-promo').scrollIntoView({behavior: "smooth"})
   })
-}());
+})();
+
+(function () {
+  if (!document.querySelector('.screen-promo-appeal.voting') || !document.querySelector('.screen-voting')) return
+
+  document.querySelector('.screen-promo-appeal.voting').addEventListener('click', (e) => {
+    e.preventDefault()
+
+    document.querySelector('.screen-voting').scrollIntoView({behavior: "smooth"})
+  })
+})();
 
 function vhFix() {
   let ornt = window.innerWidth > window.innerHeight ? 'land' : 'port'
