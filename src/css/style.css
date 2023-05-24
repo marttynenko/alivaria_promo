@@ -1886,11 +1886,17 @@ table {
   max-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
 }
 @media (max-width: 992px) {
   .screens {
     max-height: calc(var(--vh, 1vh) * 100);
   }
+}
+
+.screen {
+  scroll-snap-align: start;
 }
 
 .screen-promo {
@@ -2533,9 +2539,15 @@ table {
   fill: #C1022E;
 }
 .voting-slide-btn.disabled {
-  background: #888887;
-  color: #FBF7EE;
   pointer-events: none;
+  background: #1D1D1B;
+  color: #FBF7EE;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.voting-slide-btn.disabled svg {
+  stroke: #FFF !important;
+  fill: none;
 }
 .voting-slide-title {
   font-family: "Accia Flare";

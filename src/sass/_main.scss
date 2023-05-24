@@ -629,9 +629,18 @@
     }
 
     &.disabled {
-      background: #888887;
-      color: #FBF7EE;
+      // background: #888887;
+      // color: #FBF7EE;
       pointer-events: none;
+      background: #1D1D1B;
+      color: #FBF7EE;
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      svg {
+        stroke: #FFF !important;
+        fill: none;
+      }
     }
   }
 
