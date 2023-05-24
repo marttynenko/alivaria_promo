@@ -76,12 +76,30 @@ const benefitsSwiper = new Swiper('.benefits-slider', {
 buildPreviews(benefitsSwiper);
 
 (function () {
-  if (!document.querySelector('.screen-promo-appeal') || !document.querySelector('.screen-benefits')) return
+  if (!document.querySelector('.screen-promo-appeal.benefits') || !document.querySelector('.screen-benefits')) return
 
-  document.querySelector('.screen-promo-appeal').addEventListener('click', (e) => {
+  document.querySelector('.screen-promo-appeal.benefits').addEventListener('click', (e) => {
     e.preventDefault()
 
     document.querySelector('.screen-benefits').scrollIntoView({behavior: "smooth"})
+  })
+
+  // if (!document.querySelector('.screen-promo-appeal.voting') || !document.querySelector('.screen-voting')) return
+
+  // document.querySelector('.screen-promo-appeal.voting').addEventListener('click', (e) => {
+  //   e.preventDefault()
+
+  //   document.querySelector('.screen-voting').scrollIntoView({behavior: "smooth"})
+  // })
+
+  if (!document.querySelector('.screen-promo-appeal.promo') || !document.querySelector('.screen-promo')) return
+
+
+  document.querySelector('.screen-promo-appeal.promo').addEventListener('click', (e) => {
+    console.log('asdasd')
+    e.preventDefault()
+
+    document.querySelector('.screen-promo').scrollIntoView({behavior: "smooth"})
   })
 }());
 
@@ -142,31 +160,4 @@ if (localStorage.getItem('age_confirm') && localStorage.getItem('age_confirm') =
   },750)
 } else {
   document.querySelector('.agree').classList.add('visible')
-}
-
-const slideCards = document.querySelectorAll('.voting-slide-card');
-
-if(slideCards.length) {
-  let index;
-
-  slideCards.forEach((card, i) => {
-    if (card.classList.contains('new')) {
-      index = i;
-    }
-  });
-
-  const votingSwiper = new Swiper('.voting-slider', {
-    slidesPerView: 4,
-    spaceBetween: 40,
-    initialSlide: index - 2,
-
-    navigation: {
-      nextEl: '.swiper-button-next.voting-slider-next',
-      prevEl: '.swiper-button-prev.voting-slider-prev',
-    },
-
-    pagination: {
-      el: '.swiper-pagination.voting-slider-pagination',
-    },
-  });
 }
