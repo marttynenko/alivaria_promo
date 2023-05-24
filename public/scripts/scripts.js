@@ -38,7 +38,7 @@ function buildPreviews(swiper) {
   const previews = document.querySelector('.benefits-slider-previews')
   if (!imgs.length || !previews) return
 
-  
+
   document.querySelectorAll('.benefits-slide-img img').forEach((el,index) => {
     const clone = el.cloneNode()
     clone.removeAttribute('class')
@@ -57,7 +57,7 @@ function buildPreviews(swiper) {
     })
   })
 
-  
+
   swiper.on('slideChange', function(inst) {
     const current = inst.activeIndex
     document.querySelectorAll('.benefits-slider-preview').forEach(item => item.classList.remove('active'))
@@ -76,12 +76,30 @@ const benefitsSwiper = new Swiper('.benefits-slider', {
 buildPreviews(benefitsSwiper);
 
 (function () {
-  if (!document.querySelector('.screen-promo-appeal') || !document.querySelector('.screen-benefits')) return
+  if (!document.querySelector('.screen-promo-appeal.benefits') || !document.querySelector('.screen-benefits')) return
 
-  document.querySelector('.screen-promo-appeal').addEventListener('click', (e) => {
+  document.querySelector('.screen-promo-appeal.benefits').addEventListener('click', (e) => {
     e.preventDefault()
 
     document.querySelector('.screen-benefits').scrollIntoView({behavior: "smooth"})
+  })
+
+  // if (!document.querySelector('.screen-promo-appeal.voting') || !document.querySelector('.screen-voting')) return
+
+  // document.querySelector('.screen-promo-appeal.voting').addEventListener('click', (e) => {
+  //   e.preventDefault()
+
+  //   document.querySelector('.screen-voting').scrollIntoView({behavior: "smooth"})
+  // })
+
+  if (!document.querySelector('.screen-promo-appeal.promo') || !document.querySelector('.screen-promo')) return
+
+
+  document.querySelector('.screen-promo-appeal.promo').addEventListener('click', (e) => {
+    console.log('asdasd')
+    e.preventDefault()
+
+    document.querySelector('.screen-promo').scrollIntoView({behavior: "smooth"})
   })
 }());
 
