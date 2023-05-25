@@ -2198,7 +2198,7 @@ table {
   min-height: 100vh;
   overflow: hidden;
   position: relative;
-  padding: 200px min(9.375vw, 180px);
+  padding: 160px min(9.375vw, 180px) 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2219,8 +2219,14 @@ table {
 @media (max-width: 1680px) {
   .screen-voting {
     padding-top: 140px;
-    padding-bottom: 140px;
+    padding-bottom: 100px;
     padding-right: 170px;
+  }
+}
+@media (max-height: 980px) and (min-width: 1680px) {
+  .screen-voting {
+    padding-top: 120px;
+    padding-bottom: 80px;
   }
 }
 @media (max-width: 1440px) {
@@ -2230,14 +2236,20 @@ table {
 }
 @media (max-width: 1366px) {
   .screen-voting {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+@media (max-height: 980px) and (min-width: 1366px) {
+  .screen-voting {
+    padding-top: 100px;
+    padding-bottom: 80px;
   }
 }
 @media (max-width: 1024px) {
   .screen-voting {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 @media (max-width: 992px) {
@@ -2245,7 +2257,6 @@ table {
     min-height: calc(var(--vh, 1vh) * 100);
     padding-left: 40px;
     padding-right: 40px;
-    padding-left: 40px;
     padding-right: 160px;
   }
 }
@@ -2641,6 +2652,12 @@ table {
     padding-right: 40px;
   }
 }
+@media (max-height: 980px) and (min-width: 992px) {
+  .screen-info {
+    padding-top: 45px;
+    padding-bottom: 70px;
+  }
+}
 @media (max-width: 768px) {
   .screen-info {
     padding-left: 30px;
@@ -2717,6 +2734,11 @@ table {
   }
   .info-top-subtitle {
     font-size: 4.9vw;
+  }
+}
+@media (max-height: 980px) and (min-width: 992px) {
+  .info-top {
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 820px) and (min-width: 768px) {
@@ -2883,6 +2905,16 @@ table {
   .info-content-icon {
     font-size: 15px;
     font-size: 0.9375rem;
+  }
+}
+@media (max-height: 980px) and (min-width: 1366px) {
+  .info-content-title {
+    margin-bottom: 24px;
+  }
+}
+@media (max-height: 940px) and (min-width: 1680px) {
+  .info-content-img {
+    height: 120px;
   }
 }
 @media (max-width: 768px) {
