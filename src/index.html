@@ -442,72 +442,77 @@
           window.addEventListener('DOMContentLoaded', handleResizeAndLoad);
         }
 
-        function sendForm() {
-          const links = document.querySelectorAll('.voting-slide-btn');
+        const links = document.querySelectorAll('.voting-slide-btn');
 
-          if (localStorage.getItem('selected_card')) {
-            setTimeout(()=> {
-              const selected = links[+localStorage.getItem('selected_card') - 1];
-              const card = selected.closest('.voting-slide')
-              const text = selected.querySelector('span');
+        if(links.length) {
+          function checkCookie() {
+            if (localStorage.getItem('selected_card')) {
+              setTimeout(()=> {
+                const selected = links[+localStorage.getItem('selected_card') - 1];
+                const card = selected.closest('.voting-slide')
+                const text = selected.querySelector('span');
 
-              console.log(+localStorage.getItem('selected_card') - 1)
+                console.log(+localStorage.getItem('selected_card') - 1)
 
-              card.classList.add('enter')
-              text.innerText = 'Ваш голас улічаны'
+                card.classList.add('enter')
+                text.innerText = 'Ваш голас улічаны'
 
-            },10)
+              },10)
 
 
-            links.forEach((link, index) => {
-              link.classList.add('disabled');
+              links.forEach((link, index) => {
+                link.classList.add('disabled');
+              });
+            }
+          }
+
+          function sendForm() {
+            links.forEach(link => {
+              link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const dataValue = this.dataset.id
+                const text = link.querySelector('span')
+                const card = link.closest('.voting-slide')
+
+                fetch('http://alivaria/', {
+                  method: 'POST',
+                  body: JSON.stringify({data: dataValue}),
+                  headers: {
+                    'Content-Type': 'application/json'
+                  }
+                })
+                .then(response => {
+                  if (response.ok) {
+                    text.innerText = 'Ваш голас улічаны'
+
+                    links.forEach(link => {
+                      link.classList.add('disabled');
+                    });
+
+                    card.classList.add('enter')
+                    localStorage.setItem('selected_card', dataValue)
+
+                    showAlert()
+                  }
+                });
+              });
             });
           }
 
-          links.forEach(link => {
-            link.addEventListener('click', function (event) {
-              event.preventDefault();
+          function showAlert() {
+            const alert = document.querySelector('.alert');
 
-              const dataValue = this.dataset.id
-              const text = link.querySelector('span')
-              const card = link.closest('.voting-slide')
+            alert.classList.add('active');
 
-              fetch('http://alivaria/', {
-                method: 'POST',
-                body: JSON.stringify({data: dataValue}),
-                headers: {
-                  'Content-Type': 'application/json'
-                }
-              })
-              .then(response => {
-                if (response.ok) {
-                  text.innerText = 'Ваш голас улічаны'
+            setTimeout(function() {
+              alert.classList.remove('active');
+            }, 3000);
+          }
 
-                  links.forEach(link => {
-                    link.classList.add('disabled');
-                  });
-
-                  card.classList.add('enter')
-                  localStorage.setItem('selected_card', dataValue)
-
-                  showAlert()
-                }
-              });
-            });
-          });
+          checkCookie()
+          sendForm()
         }
-
-        function showAlert() {
-          const alert = document.querySelector('.alert');
-
-          alert.classList.add('active');
-
-          setTimeout(function() {
-            alert.classList.remove('active');
-          }, 3000);
-        }
-
-        sendForm()
       });
     </script>
 
