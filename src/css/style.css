@@ -2387,7 +2387,7 @@ table {
   position: absolute;
   left: -40px;
   top: -40px;
-  z-index: 5;
+  z-index: 9999999;
 }
 @media (max-width: 1680px) {
   .voting-slide.enter::before {
@@ -2544,7 +2544,7 @@ table {
   font-family: "Accia Flare";
   font-style: italic;
   font-size: 16px;
-  color: #FBF7EE;
+  color: #FFFFF8;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -2564,20 +2564,20 @@ table {
   position: relative;
   top: 5px;
   right: 4px;
-  stroke: #FBF7EE;
+  stroke: #FFFFF8;
   -webkit-transition: stroke 0.2s ease-in;
   -o-transition: stroke 0.2s ease-in;
   transition: stroke 0.2s ease-in;
 }
 .voting-slide-btn:hover {
-  background: #FBF7EE;
+  background: #FFFFF8;
   color: #C1022E;
 }
 .voting-slide-btn:hover svg {
   stroke: #C1022E;
 }
 .voting-slide-btn:active {
-  background: #FBF7EE;
+  background: #FFFFF8;
   color: #C1022E;
 }
 .voting-slide-btn:active svg {
@@ -2587,7 +2587,7 @@ table {
 .voting-slide-btn.disabled {
   pointer-events: none;
   background: #1D1D1B;
-  color: #FBF7EE;
+  color: #FFFFF8;
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -3790,8 +3790,8 @@ table {
   -webkit-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
-  position: absolute;
-  top: 85px;
+  position: fixed;
+  bottom: 30px;
   max-width: 553px;
   width: 100%;
   background-color: #1D1D1B;
@@ -3801,7 +3801,11 @@ table {
   height: 64px;
   line-height: 64px;
   text-align: center;
-  z-index: 10;
+  z-index: 9999999;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 @media (max-width: 1024px) {
   .alert {

@@ -46,6 +46,10 @@
 </head>
 
 <body>
+<div class="alert">
+  <div class="alert-txt">Дзякуй за ваш голас!</div>
+</div>
+
 <div id="screens" class="screens">
   <div class="screen screen-info">
 
@@ -139,10 +143,6 @@
 
 
   <div class="screen screen-voting">
-    <div class="alert">
-      <div class="alert-txt">Дзякуй за ваш голас!</div>
-    </div>
-
     <div class="marquee">
       <marquee behavior="scroll" direction="left">
         <div class="marquee-text">
@@ -476,7 +476,7 @@
               card.classList.add('enter')
               localStorage.setItem('selected_card', dataValue)
 
-              fetch('http://alivaria/', {
+              fetch('/url', {
                 method: 'POST',
                 body: JSON.stringify({data: dataValue}),
                 headers: {

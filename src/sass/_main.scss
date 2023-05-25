@@ -479,7 +479,7 @@
       position: absolute;
       left: -40px;
       top: -40px;
-      z-index: 5;
+      z-index: 9999999;
 
       @media(max-width: 1680px) {
         background-size: 50px;
@@ -625,7 +625,7 @@
     font-family: "Accia Flare";
     font-style: italic;
     font-size: 16px;
-    color: #FBF7EE;
+    color: #FFFFF8;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -642,12 +642,12 @@
       position: relative;
       top: 5px;
       right: 4px;
-      stroke: #FBF7EE;
+      stroke: #FFFFF8;
       transition: stroke .2s ease-in;
     }
 
     &:hover {
-      background: #FBF7EE;
+      background: #FFFFF8;
       color: #C1022E;
 
       svg {
@@ -656,7 +656,7 @@
     }
 
     &:active {
-      background: #FBF7EE;
+      background: #FFFFF8;
       color: #C1022E;
 
       svg {
@@ -670,7 +670,7 @@
       // color: #FBF7EE;
       pointer-events: none;
       background: #1D1D1B;
-      color: #FBF7EE;
+      color: #FFFFF8;
       opacity: 0.5;
       cursor: not-allowed;
 
@@ -1964,8 +1964,8 @@
 .alert {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  position: absolute;
-  top: 85px;
+  position: fixed;
+  bottom: 30px;
   max-width: 553px;
   width: 100%;
   background-color: #1D1D1B;
@@ -1975,7 +1975,9 @@
   height: 64px;
   line-height: 64px;
   text-align: center;
-  z-index: 10;
+  z-index: 9999999;
+  left: 50%;
+  transform: translate(-50%, 0);
 
   @media(max-width:1024px) {
     height: 45px;
