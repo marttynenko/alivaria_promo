@@ -2281,7 +2281,9 @@ table {
 .voting-slider {
   margin: 0 auto;
   padding-top: 40px;
-  max-width: 1240px;
+  max-width: 1320px;
+  padding-left: 40px;
+  padding-right: 40px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2300,6 +2302,14 @@ table {
 @media (max-width: 1680px) {
   .voting-slider {
     max-width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+@media (max-width: 768px) {
+  .voting-slider {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .voting-slider .swiper-wrapper {
@@ -2363,6 +2373,39 @@ table {
 .voting-slide {
   max-width: 280px;
   margin: 0 auto;
+}
+.voting-slide.enter {
+  position: relative;
+}
+.voting-slide.enter::before {
+  content: "";
+  background-image: url(../images/winner.svg);
+  background-repeat: no-repeat;
+  background-size: 80px;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: -40px;
+  top: -40px;
+  z-index: 5;
+}
+@media (max-width: 1680px) {
+  .voting-slide.enter::before {
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+    left: -15px;
+    top: -15px;
+  }
+}
+@media (max-width: 768px) {
+  .voting-slide.enter::before {
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+    left: -15px;
+    top: -15px;
+  }
 }
 .voting-slide-top {
   position: relative;
@@ -2512,6 +2555,10 @@ table {
   -o-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
   display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
 }
 .voting-slide-btn svg {
   position: relative;
@@ -3736,5 +3783,46 @@ table {
   .footer-inner {
     padding: 0px 20px;
   }
+}
+
+.alert {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  top: 85px;
+  max-width: 553px;
+  width: 100%;
+  background-color: #1D1D1B;
+  -webkit-box-shadow: 0px 9px 9px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 9px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+  z-index: 10;
+}
+.alert.active {
+  opacity: 1;
+}
+.alert-txt {
+  padding-left: 35px;
+  position: relative;
+  display: inline-block;
+}
+.alert-txt::before {
+  content: "";
+  background-image: url(../images/alert-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 /*# sourceMappingURL=sourcemaps/style.css.map */
