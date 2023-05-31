@@ -378,7 +378,7 @@
         const slideCards = document.querySelectorAll('.voting-slide-card');
 
         if(slideCards.length) {
-          let index;
+          let index = slideCards.length;
 
           slideCards.forEach((card, i) => {
             if (card.classList.contains('new')) {
@@ -389,19 +389,14 @@
           const votingSwiper = new Swiper('.voting-slider', {
             slidesPerView: 4,
             spaceBetween: 20,
-            initialSlide: index - 2,
-            // loop: true,
-
             navigation: {
               nextEl: '.swiper-button-next.voting-slider-next',
               prevEl: '.swiper-button-prev.voting-slider-prev',
             },
-
             pagination: {
               el: '.swiper-pagination',
               clickable: true,
             },
-
             breakpoints: {
               0: {
                 slidesPerView: 1,
@@ -418,6 +413,7 @@
               1140: {
                 spaceBetween: 30,
                 slidesPerView: 4,
+                initialSlide: index - 2,
               },
 
               1680: {
@@ -447,21 +443,20 @@
         if(links.length) {
           function checkCookie() {
             if (localStorage.getItem('selected_card')) {
-              setTimeout(()=> {
-                const selected = links[+localStorage.getItem('selected_card') - 1];
-                const card = selected.closest('.voting-slide')
-                const text = selected.querySelector('span');
-
-                console.log(+localStorage.getItem('selected_card') - 1)
-
-                card.classList.add('enter')
-                text.innerText = 'Ваш голас улічаны'
-
-              },10)
+              const savedID = localStorage.getItem('selected_card');
 
 
               links.forEach((link, index) => {
                 link.classList.add('disabled');
+
+                const linkID = link.dataset.id || null
+                if (linkID === savedID) {
+                  const card = link.closest('.voting-slide')
+                  const text = link.querySelector('span');
+
+                  card.classList.add('enter')
+                  text.innerText = 'Ваш голас улічаны'
+                }
               });
             }
           }

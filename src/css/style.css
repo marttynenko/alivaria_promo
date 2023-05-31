@@ -2222,6 +2222,10 @@ table {
     padding-bottom: 100px;
     padding-right: 170px;
   }
+  .screen-voting-content {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 @media (max-height: 980px) and (min-width: 1680px) {
   .screen-voting {
@@ -2238,6 +2242,11 @@ table {
   .screen-voting {
     padding-top: 100px;
     padding-bottom: 100px;
+  }
+}
+@media (max-width: 1366px) and (orientation: portrait) {
+  .screen-voting {
+    padding-right: 100px;
   }
 }
 @media (max-height: 980px) and (min-width: 1366px) {
@@ -2269,6 +2278,10 @@ table {
   .screen-voting {
     padding-left: 30px;
     padding-right: 30px;
+  }
+  .screen-voting-content {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 @media (max-width: 599px) {
@@ -2353,20 +2366,27 @@ table {
   position: relative;
   top: -2px;
 }
-@media (max-width: 1680px) {
+@media (min-width: 1680px) and (max-height: 980px) {
   .voting-slider .swiper-wrapper {
     margin-bottom: 30px;
   }
+}
+@media (max-width: 1680px) {
+  .voting-slider {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .voting-slider .swiper-wrapper {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 768px) {
   .voting-slider-prev {
     display: none;
   }
   .voting-slider-next {
     display: none;
-  }
-}
-@media (max-width: 860px) {
-  .voting-slider {
-    max-width: 100%;
   }
 }
 
@@ -2387,7 +2407,7 @@ table {
   position: absolute;
   left: -40px;
   top: -40px;
-  z-index: 9999999;
+  z-index: 5;
 }
 @media (max-width: 1680px) {
   .voting-slide.enter::before {
@@ -2520,7 +2540,7 @@ table {
   background-color: #fff;
   text-align: center;
   border-radius: 0px 0px 12px 12px;
-  padding: 20px 0;
+  padding: 20px 8px;
 }
 .voting-slide-card {
   margin-bottom: 28px;
@@ -2544,7 +2564,7 @@ table {
   font-family: "Accia Flare";
   font-style: italic;
   font-size: 16px;
-  color: #FFFFF8;
+  color: #FBF7EE;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -2564,20 +2584,20 @@ table {
   position: relative;
   top: 5px;
   right: 4px;
-  stroke: #FFFFF8;
+  stroke: #FBF7EE;
   -webkit-transition: stroke 0.2s ease-in;
   -o-transition: stroke 0.2s ease-in;
   transition: stroke 0.2s ease-in;
 }
 .voting-slide-btn:hover {
-  background: #FFFFF8;
+  background: #FBF7EE;
   color: #C1022E;
 }
 .voting-slide-btn:hover svg {
   stroke: #C1022E;
 }
 .voting-slide-btn:active {
-  background: #FFFFF8;
+  background: #FBF7EE;
   color: #C1022E;
 }
 .voting-slide-btn:active svg {
@@ -2587,7 +2607,7 @@ table {
 .voting-slide-btn.disabled {
   pointer-events: none;
   background: #1D1D1B;
-  color: #FFFFF8;
+  color: #FBF7EE;
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -2601,8 +2621,8 @@ table {
   font-style: italic;
   font-weight: 600;
   font-size: 18px;
-  line-height: 1.3;
-  margin-bottom: 5px;
+  line-height: 1.15;
+  margin-bottom: 6px;
 }
 .voting-slide-subtitle {
   font-weight: 600;
@@ -2630,7 +2650,7 @@ table {
     font-size: 14px;
   }
   .voting-slide-txt {
-    padding: 15px 0;
+    padding: 15px 5px;
   }
 }
 @media (max-width: 1024px) {
@@ -2642,7 +2662,7 @@ table {
     width: 10px;
   }
   .voting-slide-txt {
-    padding: 12px 0;
+    padding: 12px 5px;
   }
   .voting-slide-btn {
     height: 48px;
@@ -3787,11 +3807,13 @@ table {
 
 .alert {
   opacity: 0;
+  z-index: -9999;
+  visibility: hidden;
   -webkit-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
-  position: fixed;
-  bottom: 30px;
+  position: absolute;
+  top: 85px;
   max-width: 553px;
   width: 100%;
   background-color: #1D1D1B;
@@ -3801,11 +3823,6 @@ table {
   height: 64px;
   line-height: 64px;
   text-align: center;
-  z-index: 9999999;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
 }
 @media (max-width: 1024px) {
   .alert {
@@ -3820,6 +3837,8 @@ table {
 }
 .alert.active {
   opacity: 1;
+  visibility: visible;
+  z-index: 199;
 }
 .alert-txt {
   padding-left: 35px;
