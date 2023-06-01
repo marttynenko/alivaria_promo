@@ -289,7 +289,7 @@
                   <div class="voting-slide-txt">
                     <div class="voting-slide-title">Антось Мыртыненка</div>
                     <div class="voting-slide-subtitle">“ці”</div>
-                    <div class="voting-slide-desc">дэгустатар ад бога</div>
+                    <div class="voting-slide-desc">дэгустатар ад бога gfdgdfg gfdgdfg</div>
                   </div>
 
                   <div class="voting-slide-new"><span>#NEW</span></div>
@@ -319,7 +319,7 @@
                   </div>
 
                   <div class="voting-slide-txt">
-                    <div class="voting-slide-title">Антось Мыртыненка</div>
+                    <div class="voting-slide-title">Аfsdgfdghsdf Мыртыненка</div>
                     <div class="voting-slide-subtitle">“ці”</div>
                     <div class="voting-slide-desc">дэгустатар ад бога</div>
                   </div>
@@ -413,7 +413,6 @@
               1140: {
                 spaceBetween: 30,
                 slidesPerView: 4,
-                initialSlide: index - 2,
               },
 
               1680: {
@@ -424,6 +423,9 @@
 
           function handleResizeAndLoad() {
             const width = window.innerWidth;
+            console.log('qqqqq')
+            if (!document.querySelector('.voting-slide-card.new')) {return}
+            console.log('fdsf')
 
             if (width < 599) {
               votingSwiper.slideTo(index);
@@ -454,7 +456,7 @@
                   const card = link.closest('.voting-slide')
                   const text = link.querySelector('span');
 
-                  card.classList.add('enter')
+                  // card.classList.add('enter')
                   text.innerText = 'Ваш голас улічаны'
                 }
               });
